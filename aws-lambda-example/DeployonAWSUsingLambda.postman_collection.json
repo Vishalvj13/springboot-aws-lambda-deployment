@@ -7,6 +7,131 @@
 	},
 	"item": [
 		{
+			"name": "GetCourses",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>ID</th>\r",
+							"        <th>Name</th>\r",
+							"        <th>Price</th>\r",
+							"    </tr>\r",
+							"    \r",
+							"    {{#each response}}\r",
+							"        <tr>\r",
+							"            <td>{{id}}</td>\r",
+							"            <td>{{name}}</td>\r",
+							"            <td>{{price}}</td>\r",
+							"        </tr>\r",
+							"    {{/each}}\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return {response: pm.response.json()};\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://thgy22xycd.execute-api.ap-south-1.amazonaws.com/dev/courses/101",
+					"protocol": "https",
+					"host": [
+						"thgy22xycd",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"courses",
+						"101"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetAllCourses Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://thgy22xycd.execute-api.ap-south-1.amazonaws.com/dev/courses/101",
+							"protocol": "https",
+							"host": [
+								"thgy22xycd",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"courses",
+								"101"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 21 Mar 2025 10:02:45 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "ce56249d-6ac7-45b1-b7c9-1095e8600736"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HxXi4GufBcwEOag="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-67dd3945-34eff58d7b636c3468be5e12;Parent=165e20f76ca108dd;Sampled=0;Lineage=1:4eddcd83:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 101,\n    \"name\": \"SpringBoot With Me\",\n    \"price\": 8800\n}"
+				}
+			]
+		},
+		{
 			"name": "GetAllCourses",
 			"event": [
 				{
@@ -50,26 +175,14 @@
 					}
 				}
 			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "https://9q4alb5pxh.execute-api.ap-south-1.amazonaws.com/dev/courses",
+					"raw": "https://thgy22xycd.execute-api.ap-south-1.amazonaws.com/dev/courses",
 					"protocol": "https",
 					"host": [
-						"9q4alb5pxh",
+						"thgy22xycd",
 						"execute-api",
 						"ap-south-1",
 						"amazonaws",
@@ -81,7 +194,348 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "GetAllCourses",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://thgy22xycd.execute-api.ap-south-1.amazonaws.com/dev/courses",
+							"protocol": "https",
+							"host": [
+								"thgy22xycd",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"courses"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 21 Mar 2025 10:02:57 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "257"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "f8499fab-0f9b-448f-8b95-4c8521e19042"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HxXkvF-fhcwEXgw="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-67dd3951-6ac21153140d5f0d1d70d9b7;Parent=52c28008922806ce;Sampled=0;Lineage=1:4eddcd83:0"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 101,\n        \"name\": \"SpringBoot With Me\",\n        \"price\": 8800\n    },\n    {\n        \"id\": 102,\n        \"name\": \"Java With Me\",\n        \"price\": 9600\n    },\n    {\n        \"id\": 103,\n        \"name\": \"HIbernate With Me\",\n        \"price\": 6200\n    },\n    {\n        \"id\": 104,\n        \"name\": \"Updating the course name from SwaggerAPI With Me to MySQL with Me\",\n        \"price\": 4500\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "AddCourse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":105,\r\n    \"name\":\"AWS With Me\",\r\n    \"price\":10200\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://thgy22xycd.execute-api.ap-south-1.amazonaws.com/dev/courses",
+					"protocol": "https",
+					"host": [
+						"thgy22xycd",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"courses"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AddCourse",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":105,\r\n    \"name\":\"AWS With Me\",\r\n    \"price\":10200\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://thgy22xycd.execute-api.ap-south-1.amazonaws.com/dev/courses",
+							"protocol": "https",
+							"host": [
+								"thgy22xycd",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"courses"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 21 Mar 2025 10:03:25 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "6cda5754-8465-45e7-839d-e16ad9484779"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HxXpLFNGhcwEOhQ="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-67dd396d-553d592105cabbe03188f071;Parent=3793ab8ca6d07506;Sampled=0;Lineage=1:4eddcd83:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 105,\n    \"name\": \"AWS With Me\",\n    \"price\": 10200\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateCourse",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":104,\r\n    \"name\":\"Updating the course name from SwaggerAPI With Me to MySQL with Me\",\r\n    \"price\":4500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://thgy22xycd.execute-api.ap-south-1.amazonaws.com/dev/courses/104",
+					"protocol": "https",
+					"host": [
+						"thgy22xycd",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"courses",
+						"104"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UpdateCourse",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":104,\r\n    \"name\":\"Updating the course name from SwaggerAPI With Me to MySQL with Me\",\r\n    \"price\":4500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://thgy22xycd.execute-api.ap-south-1.amazonaws.com/dev/courses/104",
+							"protocol": "https",
+							"host": [
+								"thgy22xycd",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"courses",
+								"104"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 21 Mar 2025 10:02:08 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "100"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "281799ea-e496-4c93-a0ad-499e0aa3d9d6"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HxXdHHQ9hcwEElg="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-67dd3920-200a92f9320ddd2d12347bdb;Parent=6f93f0fd46f0d9c7;Sampled=0;Lineage=1:4eddcd83:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 104,\n    \"name\": \"Updating the course name from SwaggerAPI With Me to MySQL with Me\",\n    \"price\": 4500\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteCourse",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://thgy22xycd.execute-api.ap-south-1.amazonaws.com/dev/courses/105",
+					"protocol": "https",
+					"host": [
+						"thgy22xycd",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"courses",
+						"105"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteCourse",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://thgy22xycd.execute-api.ap-south-1.amazonaws.com/dev/courses/105",
+							"protocol": "https",
+							"host": [
+								"thgy22xycd",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"courses",
+								"105"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 21 Mar 2025 10:04:03 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "26db685c-57a2-4f14-aeb7-6c81586c0e36"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HxXvEF4ZBcwEQ5Q="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-67dd3993-32e8065d473060ab421414ce;Parent=49a95fb731969d55;Sampled=0;Lineage=1:4eddcd83:0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "SwaggerAPI",
@@ -127,26 +581,14 @@
 					}
 				}
 			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "https://9q4alb5pxh.execute-api.ap-south-1.amazonaws.com/dev/v3/api-docs",
+					"raw": "https://thgy22xycd.execute-api.ap-south-1.amazonaws.com/dev/v3/api-docs",
 					"protocol": "https",
 					"host": [
-						"9q4alb5pxh",
+						"thgy22xycd",
 						"execute-api",
 						"ap-south-1",
 						"amazonaws",
@@ -159,107 +601,70 @@
 					]
 				}
 			},
-			"response": []
-		},
-		{
-			"name": "AddCourse",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"id\":104,\r\n    \"name\":\"With Me\",\r\n    \"price\":43.43\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"response": [
+				{
+					"name": "SwaggerAPI",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://thgy22xycd.execute-api.ap-south-1.amazonaws.com/dev/v3/api-docs",
+							"protocol": "https",
+							"host": [
+								"thgy22xycd",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"v3",
+								"api-docs"
+							]
 						}
-					}
-				},
-				"url": {
-					"raw": "https://9q4alb5pxh.execute-api.ap-south-1.amazonaws.com/dev/courses",
-					"protocol": "https",
-					"host": [
-						"9q4alb5pxh",
-						"execute-api",
-						"ap-south-1",
-						"amazonaws",
-						"com"
-					],
-					"path": [
-						"dev",
-						"courses"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "UpdateCourse",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"id\":104,\r\n    \"name\":\"With Me\",\r\n    \"price\":43.43\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 21 Mar 2025 10:04:23 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2021"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "1828934b-5e56-4861-b3d0-b57923b833f1"
+						},
+						{
+							"key": "x-amzn-Remapped-Content-Length",
+							"value": "2021"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "HxXySHxMBcwEOMA="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-67dd39a7-3581f88e443ad06440d589c7;Parent=4aa8dc9b51c1fe75;Sampled=0;Lineage=1:4eddcd83:0"
 						}
-					}
-				},
-				"url": {
-					"raw": "https://9q4alb5pxh.execute-api.ap-south-1.amazonaws.com/dev/courses/{id}",
-					"protocol": "https",
-					"host": [
-						"9q4alb5pxh",
-						"execute-api",
-						"ap-south-1",
-						"amazonaws",
-						"com"
 					],
-					"path": [
-						"dev",
-						"courses",
-						"{id}"
-					]
+					"cookie": [],
+					"body": "{\n    \"openapi\": \"3.1.0\",\n    \"info\": {\n        \"title\": \"OpenAPI definition\",\n        \"version\": \"v0\"\n    },\n    \"servers\": [\n        {\n            \"url\": \"https://thgy22xycd.execute-api.ap-south-1.amazonaws.com\",\n            \"description\": \"Generated server url\"\n        }\n    ],\n    \"paths\": {\n        \"/courses/{id}\": {\n            \"get\": {\n                \"tags\": [\n                    \"course-controller\"\n                ],\n                \"operationId\": \"getCourseById\",\n                \"parameters\": [\n                    {\n                        \"name\": \"id\",\n                        \"in\": \"path\",\n                        \"required\": true,\n                        \"schema\": {\n                            \"type\": \"integer\",\n                            \"format\": \"int32\"\n                        }\n                    }\n                ],\n                \"responses\": {\n                    \"200\": {\n                        \"description\": \"OK\",\n                        \"content\": {\n                            \"application/json\": {\n                                \"schema\": {\n                                    \"$ref\": \"#/components/schemas/Course\"\n                                }\n                            }\n                        }\n                    }\n                }\n            },\n            \"put\": {\n                \"tags\": [\n                    \"course-controller\"\n                ],\n                \"operationId\": \"updateCourse\",\n                \"parameters\": [\n                    {\n                        \"name\": \"id\",\n                        \"in\": \"path\",\n                        \"required\": true,\n                        \"schema\": {\n                            \"type\": \"integer\",\n                            \"format\": \"int32\"\n                        }\n                    }\n                ],\n                \"requestBody\": {\n                    \"content\": {\n                        \"application/json\": {\n                            \"schema\": {\n                                \"$ref\": \"#/components/schemas/Course\"\n                            }\n                        }\n                    },\n                    \"required\": true\n                },\n                \"responses\": {\n                    \"200\": {\n                        \"description\": \"OK\",\n                        \"content\": {\n                            \"application/json\": {\n                                \"schema\": {\n                                    \"$ref\": \"#/components/schemas/Course\"\n                                }\n                            }\n                        }\n                    }\n                }\n            },\n            \"delete\": {\n                \"tags\": [\n                    \"course-controller\"\n                ],\n                \"operationId\": \"deleteCourse\",\n                \"parameters\": [\n                    {\n                        \"name\": \"id\",\n                        \"in\": \"path\",\n                        \"required\": true,\n                        \"schema\": {\n                            \"type\": \"integer\",\n                            \"format\": \"int32\"\n                        }\n                    }\n                ],\n                \"responses\": {\n                    \"200\": {\n                        \"description\": \"OK\"\n                    }\n                }\n            }\n        },\n        \"/courses\": {\n            \"get\": {\n                \"tags\": [\n                    \"course-controller\"\n                ],\n                \"operationId\": \"getAllCourses\",\n                \"responses\": {\n                    \"200\": {\n                        \"description\": \"OK\",\n                        \"content\": {\n                            \"application/json\": {\n                                \"schema\": {\n                                    \"type\": \"array\",\n                                    \"items\": {\n                                        \"$ref\": \"#/components/schemas/Course\"\n                                    }\n                                }\n                            }\n                        }\n                    }\n                }\n            },\n            \"post\": {\n                \"tags\": [\n                    \"course-controller\"\n                ],\n                \"operationId\": \"addCourse\",\n                \"requestBody\": {\n                    \"content\": {\n                        \"application/json\": {\n                            \"schema\": {\n                                \"$ref\": \"#/components/schemas/Course\"\n                            }\n                        }\n                    },\n                    \"required\": true\n                },\n                \"responses\": {\n                    \"200\": {\n                        \"description\": \"OK\",\n                        \"content\": {\n                            \"application/json\": {\n                                \"schema\": {\n                                    \"$ref\": \"#/components/schemas/Course\"\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        },\n        \"/ping\": {\n            \"get\": {\n                \"tags\": [\n                    \"ping-controller\"\n                ],\n                \"operationId\": \"ping\",\n                \"responses\": {\n                    \"200\": {\n                        \"description\": \"OK\",\n                        \"content\": {\n                            \"*/*\": {\n                                \"schema\": {\n                                    \"type\": \"object\",\n                                    \"additionalProperties\": {\n                                        \"type\": \"string\"\n                                    }\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    },\n    \"components\": {\n        \"schemas\": {\n            \"Course\": {\n                \"type\": \"object\",\n                \"properties\": {\n                    \"id\": {\n                        \"type\": \"integer\",\n                        \"format\": \"int32\"\n                    },\n                    \"name\": {\n                        \"type\": \"string\"\n                    },\n                    \"price\": {\n                        \"type\": \"number\",\n                        \"format\": \"double\"\n                    }\n                }\n            }\n        }\n    }\n}"
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "DeleteCourse",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"id\":104,\r\n    \"name\":\"With Me\",\r\n    \"price\":43.43\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://9q4alb5pxh.execute-api.ap-south-1.amazonaws.com/dev/courses/{id}",
-					"protocol": "https",
-					"host": [
-						"9q4alb5pxh",
-						"execute-api",
-						"ap-south-1",
-						"amazonaws",
-						"com"
-					],
-					"path": [
-						"dev",
-						"courses",
-						"{id}"
-					]
-				}
-			},
-			"response": []
+			]
 		}
 	]
 }
-**Below is for documentation purpose only** 
-*Along with the API calls above document also contains the Swagger-API integration*
